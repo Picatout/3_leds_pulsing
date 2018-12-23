@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=3_leds_pulsing.X
+PROJECTNAME=3_leds_fading.X
 
 # Active Configuration
 DEFAULTCONF=default

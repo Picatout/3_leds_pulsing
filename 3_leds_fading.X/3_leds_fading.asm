@@ -1,17 +1,15 @@
-; DESCRIPTION: pulsing 3 LEDS using 2 PIC10F200
+; DESCRIPTION: fading 3 LEDS using 2 PIC10F200
 ; AUTHOR: Jacques Deschenes
 ; DATE: 2018-12-23
 ; DETAIL:    
-; heart beat effect produce using 2 PIC10F200.
-; each MCU run de same program which consist to outputing a binary count
+; fading effect using 2 PIC10F200.
+; each MCU run the same program which consist to outputing a binary count
 ; GP0,GP1,GP2
-; connecting a LED between corresponding GP of each MCU the LED fade in and out.
+; connecting a LED between corresponding GPx of each MCU result in the LEDs fading.
 ; This effect result from the fact that each MCU as a different oscillator frequency;
-; Hence there is a phase shift between the square wave a each output from one MCU
-; to the other.  The pulsing frequency equal the difference in frequency between the
-; two oscillators.
-;  Fhb= |Fosc1-Fosc|
-;    
+; Hence there is a phase shift between the square wave at each output from one MCU
+; to the other.
+    
     include p10f200.inc
     
     __config  _WDTE_OFF

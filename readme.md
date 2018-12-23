@@ -1,8 +1,8 @@
-3 LEDs pulsing
+3 LEDs fading
 ==============
 
-This is a demonstration of LED heart beat effect without using PWM varying duty cycle.  In this demo 2 PIC1F200 are use as binary counters outputing the count on GPIO.
-3 LEDs are connected between corresponding GPx between the two MCU. Because the internal oscillator of each MCU are not at exactly the same frequency. The count on the
+This is a demonstration of LED fading effect without using PWM ramping duty cycle.  In this demo 2 PIC1F200 are use as binary counters outputing the count on GPIO.
+3 LEDs are connected between corresponding GPx of the two MCU. Because the internal oscillator of each MCU are not at exactly the same frequency. The count on the
 I/O pins phase shift gradually producing a fade in, fade out effect.
 
 The only components required are
@@ -10,7 +10,7 @@ The only components required are
 1. 2 PIC10F200
 1. 3 LEDs
 
-![schematic](3_led_pulsing.png)
+![schematic](3_leds_fading.png)
 
 Both MCU run the same code which is only 14 instructions.
 

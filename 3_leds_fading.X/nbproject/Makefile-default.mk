@@ -30,12 +30,12 @@ ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IMAGE_TYPE=debug
 OUTPUT_SUFFIX=cof
 DEBUGGABLE_SUFFIX=cof
-FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/3_leds_pulsing.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/3_leds_fading.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 else
 IMAGE_TYPE=production
 OUTPUT_SUFFIX=hex
 DEBUGGABLE_SUFFIX=cof
-FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/3_leds_pulsing.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/3_leds_fading.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 endif
 
 ifeq ($(COMPARE_BUILD), true)
@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=3_leds_pulsing.asm
+SOURCEFILES_QUOTED_IF_SPACED=3_leds_fading.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/3_leds_pulsing.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/3_leds_pulsing.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/3_leds_fading.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/3_leds_fading.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/3_leds_pulsing.o
+OBJECTFILES=${OBJECTDIR}/3_leds_fading.o
 
 # Source Files
-SOURCEFILES=3_leds_pulsing.asm
+SOURCEFILES=3_leds_fading.asm
 
 
 CFLAGS=
@@ -87,42 +87,42 @@ FIXDEPS=fixDeps
 ifneq ($(INFORMATION_MESSAGE), )
 	@echo $(INFORMATION_MESSAGE)
 endif
-	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/3_leds_pulsing.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/3_leds_fading.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=10f200
 MP_LINKER_DEBUG_OPTION= 
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/3_leds_pulsing.o: 3_leds_pulsing.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/3_leds_fading.o: 3_leds_fading.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/3_leds_pulsing.o.d 
-	@${RM} ${OBJECTDIR}/3_leds_pulsing.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/3_leds_pulsing.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/3_leds_pulsing.lst\\\" -e\\\"${OBJECTDIR}/3_leds_pulsing.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/3_leds_pulsing.o\\\" \\\"3_leds_pulsing.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/3_leds_pulsing.o"
-	@${FIXDEPS} "${OBJECTDIR}/3_leds_pulsing.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/3_leds_fading.o.d 
+	@${RM} ${OBJECTDIR}/3_leds_fading.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/3_leds_fading.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/3_leds_fading.lst\\\" -e\\\"${OBJECTDIR}/3_leds_fading.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/3_leds_fading.o\\\" \\\"3_leds_fading.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/3_leds_fading.o"
+	@${FIXDEPS} "${OBJECTDIR}/3_leds_fading.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 else
-${OBJECTDIR}/3_leds_pulsing.o: 3_leds_pulsing.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/3_leds_fading.o: 3_leds_fading.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/3_leds_pulsing.o.d 
-	@${RM} ${OBJECTDIR}/3_leds_pulsing.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/3_leds_pulsing.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/3_leds_pulsing.lst\\\" -e\\\"${OBJECTDIR}/3_leds_pulsing.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/3_leds_pulsing.o\\\" \\\"3_leds_pulsing.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/3_leds_pulsing.o"
-	@${FIXDEPS} "${OBJECTDIR}/3_leds_pulsing.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/3_leds_fading.o.d 
+	@${RM} ${OBJECTDIR}/3_leds_fading.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/3_leds_fading.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/3_leds_fading.lst\\\" -e\\\"${OBJECTDIR}/3_leds_fading.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/3_leds_fading.o\\\" \\\"3_leds_fading.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/3_leds_fading.o"
+	@${FIXDEPS} "${OBJECTDIR}/3_leds_fading.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: link
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-dist/${CND_CONF}/${IMAGE_TYPE}/3_leds_pulsing.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
+dist/${CND_CONF}/${IMAGE_TYPE}/3_leds_fading.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_PK3=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/3_leds_pulsing.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_PK3=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/3_leds_fading.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 else
-dist/${CND_CONF}/${IMAGE_TYPE}/3_leds_pulsing.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
+dist/${CND_CONF}/${IMAGE_TYPE}/3_leds_fading.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w  -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -odist/${CND_CONF}/${IMAGE_TYPE}/3_leds_pulsing.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w  -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -odist/${CND_CONF}/${IMAGE_TYPE}/3_leds_fading.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 endif
 
 
