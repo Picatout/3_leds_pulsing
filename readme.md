@@ -10,6 +10,7 @@ The only components required are
 1. 2 PIC10F200
 1. 3 LEDs
 
+![schematic](3_led_pulsing.png)
 
 Both MCU run the same code which is only 14 instructions.
 
