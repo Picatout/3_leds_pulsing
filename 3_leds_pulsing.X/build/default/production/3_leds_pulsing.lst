@@ -1,0 +1,133 @@
+MPASM 5.76  /HOME/JACQUES/GITHUB/3_LEDS_PULS   12-23-2018  16:08:30         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ; DESCRIPTION: pulsing 3 LEDS using 2 PIC10F200
+                      00002 ; AUTHOR: Jacques Deschenes
+                      00003 ; DATE: 2018-12-23
+                      00004 ; DETAIL:    
+                      00005 ; heart beat effect produce using 2 PIC10F200.
+                      00006 ; each MCU run de same program which consist to outputing a binary count
+                      00007 ; GP0,GP1,GP2
+                      00008 ; connecting a LED between corresponding GP of each MCU the LED fade in and out.
+                      00009 ; This effect result from the fact that each MCU as a different oscillator frequency;
+                      00010 ; Hence there is a phase shift between the square wave a each output from one MCU
+                      00011 ; to the other.  The pulsing frequency equal the difference in frequency between the
+                      00012 ; two oscillators.
+                      00013 ;  Fhb= |Fosc1-Fosc|
+                      00014 ;    
+                      00015     include p10f200.inc
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ; Build date : Sep 19 2017
+                      00005 ;  MPASM PIC10F200 processor include
+                      00006 ; 
+                      00007 ;  (c) Copyright 1999-2017 Microchip Technology, All rights reserved
+                      00008 ;==========================================================================
+                      00009 
+                      00152         LIST
+                      00016     
+0FFF   0FFB           00017     __config  _WDTE_OFF
+                      00018     
+                      00019     udata
+0000                  00020 cntr res 1
+                      00021  
+                      00022     org 0
+                      00023     ; set GP0,GP1,GP2 as output
+0000   0C00           00024     movlw 0
+0001   0006           00025     tris GPIO
+                      00026     ; set TMR0 with 1:4 pre-scale
+0002   0C82           00027     movlw 2|1<<7
+0003   0002           00028     option
+                      00029     
+0004                  00030 loop
+0004   02??           00031     incf cntr,F
+0005   02??           00032     movfw cntr
+                      00033     ; output binary count to GPIO
+0006   0026           00034     movwf GPIO
+                      00035     ; delay ~ 1msec
+0007   0201           00036     movfw TMR0
+0008   0743           00037     skpz
+0009   0A??           00038     goto $-2
+000A   0A??           00039     goto loop
+                      00040     
+0FFB                  00041     end
+MPASM 5.76  /HOME/JACQUES/GITHUB/3_LEDS_PULS   12-23-2018  16:08:30         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+C                                 00000000
+CAL0                              00000001
+CAL1                              00000002
+CAL2                              00000003
+CAL3                              00000004
+CAL4                              00000005
+CAL5                              00000006
+CAL6                              00000007
+DC                                00000001
+F                                 00000001
+FOSC4                             00000000
+FSR                               00000004
+GP0                               00000000
+GP1                               00000001
+GP2                               00000002
+GP3                               00000003
+GPIO                              00000006
+GPWUF                             00000007
+INDF                              00000000
+NOT_GPPU                          00000006
+NOT_GPWU                          00000007
+NOT_PD                            00000003
+NOT_TO                            00000004
+OSCCAL                            00000005
+PCL                               00000002
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+STATUS                            00000003
+T0CS                              00000005
+T0SE                              00000004
+TMR0                              00000001
+TRISIO0                           00000000
+TRISIO1                           00000001
+TRISIO2                           00000002
+TRISIO3                           00000003
+W                                 00000000
+Z                                 00000002
+_.org_0_0009                      00000009
+_CONFIG                           00000FFF
+_CP_OFF                           00000FFF
+_CP_ON                            00000FF7
+_IDLOC0                           00000100
+_IDLOC1                           00000101
+_IDLOC2                           00000102
+_IDLOC3                           00000103
+_IntRC_OSC                        00000FFF
+_MCLRE_OFF                        00000FEF
+_MCLRE_ON                         00000FFF
+_OSC_IntRC                        00000FFF
+_WDTE_OFF                         00000FFB
+_WDTE_ON                          00000FFF
+MPASM 5.76  /HOME/JACQUES/GITHUB/3_LEDS_PULS   12-23-2018  16:08:30         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_WDT_OFF                          00000FFB
+_WDT_ON                           00000FFF
+__10F200                          00000001
+cntr                              00000000
+loop                              00000004
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+
