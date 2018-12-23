@@ -46,4 +46,5 @@ loop
 
 </code></pre>
 
+LED D1 is the fastest, D2 pulse at half D1 rate and D3 pulse at 1/4 D1 rate.
 
